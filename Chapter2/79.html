@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <title>콜렉션(Collection)</title>
+  </head>
+  <body>
+    <h1>콜렉션(Collection)</h1>
+
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+      // 배열버퍼
+//      let buffer = new ArrayBuffer(80);
+
+//      let buffer = new ArrayBuffer(80);
+//      let view = new DataView(buffer);
+//      view.setInt32(8, 22, false);
+//      var number = view.getInt32(8, false);
+//      console.log(number);
+
+
+      // 타입화 배열
+//      var buffer = new ArrayBuffer(80);
+//      var typed_array = new Float64Array(buffer);
+//      typed_array[4] = 11;
+//
+//      console.log(typed_array.length);
+//      console.log(typed_array[4]);
+
+
+      // 세트 (Set)
+//      let set1 = new Set();
+//      let set2 = new Set("안녕하세요!!!");
+//
+//      let set = new Set("안녕하세요!!!");
+//      set.add(12);
+//      console.log(set.has("!"));
+//      console.log(set.size);
+//
+//      set.delete(12);
+//      console.log(...set);
+//
+//      set.clear();
+
+
+      // 위크세트(weakset)
+//      let weakset = new WeakSet();
+//      (function(){
+//        let a = {};
+//      })()
+//
+//      console.log(weakset.size);  // undefined
+//      console.log(...weakset);    // exception
+//
+//      weakset.clear();
+
+
+      // 맵 (map)
+//      let map = new Map();
+//      let o = {n: 1};
+//      map.set(o, "A");
+//      map.set("2", 9);
+//
+//      console.log(map.has("2"));
+//      console.log(map.get(o));
+//      console.log(...map);
+//
+//      map.delete("2");
+//      map.clear();
+//
+//      let map_1 = new Map([[1, 2], [4, 5]]);
+//      console.log(map_1.size);
+
+
+      // 위크맵 (weakmap)
+      let weakmap = new WeakMap();
+
+      (function() {
+        let o = {n: 1};
+        weakmap.set(o, "A");
+      })()
+
+      let s = {m: 1};
+
+      weakmap.set(s, "B");  // {Object {n: 1} => "A", Object {m: 1} => "B"}
+      console.log(weakmap.get(s));
+      console.log(...weakmap);  // Cannot spread non-iterable object.
+
+      weakmap.delete(s);
+      weakmap.clear();  // Exception
+
+      let weakmap_1 = new WeakMap([[{},2], [{}, 5]]);
+
+      console.log(weakmap_1.size);
+
+    </script>
+
+  </body>
+</html>

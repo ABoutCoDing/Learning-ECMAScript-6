@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <title>펼침 연산자(spread operator)</title>
+  </head>
+  <body>
+    <h1>펼침 연산자(spread operator)</h1>
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+
+    <script type="module" >
+      // ES5 이전
+//      function myFunction(a, b){
+//        return a * b;
+//      }
+//      var data = [2, 4];
+//      var result = myFunction.apply(null, data);
+//      console.log(result);
+
+      // ES6
+      function myFunction(a, b){
+        return a * b;
+      }
+      let data = [2, 4];
+      let result = myFunction(...data);
+      console.log(result);
+
+
+      // 펼침 연산자의 다른 용례
+      // 배열 값을 다른 배열의 일부로 만듦
+//      let array1 = [2, 3, 4];
+//      let array2 = [1, ...array1, 5, 6, 7];
+//
+//      console.log(array2);
+
+      // 배열 값을 다른 배열에 밀어 넣기
+//      var array1 = [2, 3, 4];
+//      var array2 = [1];
+//      Array.prototype.push.apply(array2, array1);
+//      console.log(array2);
+
+      // ES6
+//      let array1 = [2, 3, 4];
+//      let array2 = [1];
+//
+//      array2.push(...array1);
+//      console.log(array2);
+
+
+      // 여러 배열 펼침
+//      let array1 = [1];
+//      let array2 = [2];
+//      let array3 = [...array1, ...array2, ...[3, 4]];
+//      let array4 = [5];
+//
+//      function myFunction(a, b, c, d, e) {
+//        return a+b+c+d+e;
+//      }
+//
+//      let result = myFunction(...array3, ...array4);
+//      console.log(result);
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <title>문자열</title>
+  </head>
+  <body>
+    <h1>문자열</h1>
+
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module" >
+      // 유니코드
+//      var \u0061 = "\u0061\u0062\u0063";
+//      console.log(a);
+
+      // 비트가 초과된 코드 포인트를 이스케이프
+//      console.log("\uD83D\uDE91");
+//      console.log("\u{1F691}");
+
+      //codePointAt(index) 메소드
+//      console.log("\uD83D\uDE91".codePointAt(1));
+//      console.log("\u{1F691}".codePointAt(1));
+//      console.log("hello".codePointAt(2));
+
+      // String.fromCodePoint(number1, ...number2) 메소드
+//      console.log(String.fromCharCode(0x61, 0x62, 0x63));
+//      console.log("\u0061\u0062" == String.fromCharCode(0x61, 0x62));
+
+      // repeat(count) 메소드
+//      console.log("ㅋ".repeat(6));
+
+      // includes(string, index) 메소드
+//      var str = "안녕, 나는 자바스크립트 개발자라구!";
+//      console.log(str.includes("자바스크립트"));
+
+//      var str = "안녕, 나는 자바스크립트 개발자라구!";
+//      console.log(str.includes("자바스크립트", 13));
+
+      // startWith(string, index) 메소드
+//      var str = "안녕, 나는 자바스크립트 개발자라구!";
+//      console.log(str.startsWith('안녕, 나는'));
+
+//      var str = "안녕, 나는 자바스크립트 개발자라구!";
+//      console.log(str.startsWith('자바스크립트 개발자', 7));
+
+      // 정규화(normalization)
+//      console.log("\u00E9");
+//      console.log("e\u0301");
+
+      // 예기치못한 결과
+//      var a = "\u00E9";
+//      var b = "e\u0301";
+
+//      console.log(a == b);
+//      console.log(a.length);
+//      console.log(b.length);
+//
+//      for (let i = 0; i < a.length; i++){
+//        console.log(a[i]);
+//      }
+//
+//      for (let i = 0; i < b.length; i++){
+//        console.log(b[i]);
+//      }
+
+      //normalize()
+//      var a = "\u00E9".normalize();
+//      var b = "e\u0301".normalize();
+//
+//      console.log(a == b);
+//      console.log(a.length);
+//      console.log(b.length);
+//
+//      for (let i = 0; i < a.length; i++){
+//        console.log(a[i]);
+//      }
+//
+//      for (let i = 0; i < b.length; i++){
+//        console.log(b[i]);
+//      }
+    </script>
+  </body>
+</html>

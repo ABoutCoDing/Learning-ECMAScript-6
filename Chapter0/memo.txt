@@ -1,0 +1,2 @@
+- ES6 지원 여부 
+http://kangax.github.io/compat-table/es6/

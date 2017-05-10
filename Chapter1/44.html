@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+  <head>
+    <title>해체할당(destructuring assignment)</title>
+  </head>
+  <body>
+    <h1>해체할당(destructuring assignment)</h1>
+
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+      // 배열 해체 할당
+      // ES5 이전
+//      var myArray = [1, 2, 3];
+//      var a = myArray[0];
+//      var b = myArray[1];
+//      var c = myArray[2];
+
+      // ES6
+//      let myArray = [1, 2, 3];
+//      let a, b, c;
+//      [a, b, c] = myArray;  // 배열 해체 할당 구문
+//      console.log(a);
+
+//      let [a, b, c] = [1, 2, 3];
+
+
+      // 값을 건너 뛴다.
+//      let [a, , b] = [1, 2, 3];
+//      console.log(a);
+//      console.log(b);
+
+
+      // 배열 해체할당에 나머지 연산자를 사용
+//      let [a, ...b] = [1, 2, 3, 4, 5, 6];
+//
+//      console.log(a);
+//      console.log(Array.isArray(b));
+//      console.log(b);
+
+
+//        let [a, , ...b] = [1, 2, 3, 4, 5, 6];
+//
+//        console.log(a);
+//        console.log(b);
+
+
+      // 변수의 기본값
+//      let [a, b, c = 3] = [1, 2];
+//      console.log(c);
+
+
+      // 중첩 배열 해체
+//      let [a, b, [c, d]] = [1, 2, [3, 4]];
+
+
+      // 파라미터로 배열 해체 할당 사용
+//      function myFunction([a, b, c = 3]) {
+//        console.log(a, b, c);
+//      }
+//      myFunction([1, 2]);
+
+
+      // 파라미터로 배열 해체 할당 사용 - undefined 기본 배열
+//      function myFunction([a, b, c = 3] = [1, 2, 3]) {
+//        console.log(a, b, c);
+//      }
+//      myFunction(undefined);
+
+
+      //객체 해체 할당
+      // ES5 이전
+//      var object = {"name" : "민호", "age" : 23};
+//      var name = object.name;
+//      var age = object.age;
+//      console.log(name);
+//      console.log(age);
+
+      // ES6
+//      let object = {"name" : "민호", "age" : 23};
+//      let name, age;
+//      ({name, age} = object);
+//      console.log(name);
+//      console.log(age);
+
+
+//      let object = {"name" : "민호", "age" : 23};
+//      let x, y;
+//      ({name: x, age: y} = object);
+//      console.log(x);
+//      console.log(y);
+
+
+//      let {name: x, age: y} = {"name" : "민호", "age" : 23};
+//      console.log(x);
+//      console.log(y);
+
+
+      // 변수의 기본값
+//      let {a, b, c = 3} = {a: "1", b: "2"};
+//      console.log(c);
+
+
+      // 조합 프로퍼티명을 해체
+//      let {["first" + "Name"] : x} = { firstName: "수지"};
+//      console.log(x);
+
+
+      // 중첩 객체를 해체
+//      var {name, otherInfo: {age}} = {name: "수지", otherInfo: {age: 23}};
+//      console.log(name, age);
+
+
+      // 파라미터로 객체 해체 할당 사용
+//      function myFunction({name = "수지", age = 23, profession = "연예인"} = {}) {
+//        console.log(name, age, profession);
+//      }
+//      myFunction({name: "민호", age: 23});
+
+    </script>
+  </body>
+</html>

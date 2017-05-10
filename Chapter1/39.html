@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>파라미터 기본값</title>
+  </head>
+  <body>
+    <h1>파라미터 기본값</h1>
+
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module" >
+        function myFunction (x, y, z){
+          x = x === undefined ? 1 : x;
+          y = y === undefined ? 2 : y;
+          z = z === undefined ? 3 : z;
+          console.log(x, y, z);
+        }
+        myFunction(6, 7);
+
+
+//        function myFunction(x = 1, y = 2, z = 3) {
+//          console.log(x, y, z);
+//        }
+//        myFunction(6, 7);
+
+
+//        function myFunction(x = 1, y = 2, z = 3) {
+//          console.log(x, y, z);
+//        }
+//        myFunction(undefined, 7 , 9);
+
+
+//        function myFunction(x = 1, y = 2, z = 3) {
+//          console.log(x, y, z);
+//        }
+//        myFunction(6, 7);
+    </script>
+  </body>
+</html>

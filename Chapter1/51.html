@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <title>강화된 객체 리터럴</title>
+  </head>
+  <body>
+    <h1>강화된 객체 리터럴</h1>
+
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module" >
+//      var x = 1, y = 2;
+//      var object = {
+//        x: x,
+//        y: y
+//      }
+//      console.log(object.x);
+
+      // ES6
+//      let x = 1, y = 2;
+//      let object = { x, y };
+//      console.log(object.x);
+
+      // 메소드 정의
+//      let object = {
+//        myFunction() {
+//          console.log("안녕하세요!!!");
+//        }
+//      }
+//      object.myFunction();
+
+
+      // 조합 프로퍼티명
+      // ES5 이전
+//      var object = {};
+//      object["first"+"Name"] = "수지";
+//      console.log(object["first" + "Name"]);  // 추출
+
+      // ES6
+//      let object = { ["first" + "Name"] : "수지" };
+//      console.log(object["first" + "Name"]);
+    </script>
+  </body>
+</html>

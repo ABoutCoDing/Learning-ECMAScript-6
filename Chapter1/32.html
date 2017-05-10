@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <title>let 키워드</title>
+  </head>
+  <body>
+    <h1>let 키워드</h1>
+
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module" >
+      // 함수 스코프 (function scopred variable) 변수 선언
+      var a = 12;
+      function myFunction() {
+        console.log(a);
+        var b = 13;
+        if (true) {
+          var c = 14;
+          console.log(b);
+        }
+        console.log(c);
+      }
+      myFunction();
+
+
+      // 블록 스코프 변수 선언
+      let a = 12; // 전역 접근 가능
+      function myFunction() {
+        console.log(a);
+        let b = 13; // 함수 안에서 접근 가능
+        if (true) {
+          let c = 14; // "if"문 안에서 접근 가능
+          console.log(b);
+        }
+        console.log(c); // 접근 불가
+      }
+      myFunction();
+
+
+      // 변수 재선언
+      // var 키워드 사용
+//      var a = 0;
+//      var a = 1;
+//
+//      console.log(a);
+//
+//      function myFunction() {
+//        var b = 2;
+//        var b = 3;
+//
+//        console.log(b);
+//      }
+//
+//      myFunction();
+
+      // let 키워드 사용
+//      let a = 0;
+//      let a = 1;  // TypeError
+//
+//      function myFunction(){
+//        let b = 2;
+//        let b = 3;  // TypeError
+//
+//        if (true){
+//          let c = 4;
+//          let c = 5;  // TypeError
+//        }
+//      }
+//
+//      myFunction();
+//    //  Uncaught SyntaxError: Identifier 'a' has already been declared
+
+//      var a = 1;
+//      let b = 2;
+//
+//      function myFunction() {
+//        var a = 3; //전혀다른변수
+//        let b = 4; //전혀다른변수
+//
+//        if(true){
+//          var a = 5; //덮어쓴다.
+//          let b = 5; //전혀다른변수
+//
+//          console.log(a);
+//          console.log(b);
+//        }
+//
+//        console.log(a);
+//        console.log(b);
+//      }
+//
+//      myFunction();
+//
+//      console.log(a);
+//      console.log(b);
+
+    </script>
+  </body>
+</html>

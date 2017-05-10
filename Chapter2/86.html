@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <title>객체</title>
+  </head>
+  <body>
+    <h1>객체</h1>
+
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+      // __proto__ 프로퍼티
+      // ES5 이전
+//      var x = {x: 12};
+//      var y = Object.create(x, {y: {value: 13}});
+//
+//      console.log(y.x);
+//      console.log(y.y);
+
+      // ES6 이후
+//      let a = {a: 12, __proto__: {b: 13}};
+//      console.log(a.a);
+//      console.log(a.b);
+
+
+      // Object.is(value1, value2) 메소드
+//      console.log(Object.is(0, -0));
+//      console.log(0 === -0);
+//      console.log(Object.is(NaN, 0/0));
+//      console.log(NaN ===0/0);
+//      console.log(Object.is(NaN, NaN));
+//      console.log(NaN === NaN);
+
+
+      // Object.setProtytypeOf(object, prototype) 메소드
+//      let x = {x: 12};
+//      let y = {y: 13};
+//
+//      Object.setPrototypeOf(y, x);
+//
+//      console.log(y.x);
+//      console.log(y.y);
+
+
+      // Object.assign(targetObj, sourceObjs...) 메소드
+//      let x = {x: 12};
+//      let y = {y: 13, __proto__: x};
+//      let z = {z: 14,  b() {return 2;}, q: {}};
+//
+//      Object.defineProperty(z, "z", {enumerable: false});
+//
+//      let m = {};
+//
+//      Object.assign(m, y, z);
+//
+//      console.log(m.y);
+//      console.log(m.z);
+//      console.log(m.b);
+//      console.log(m.x);
+//      console.log(m.q == z.q);
+    </script>
+  </body>
+</html>
+
+
