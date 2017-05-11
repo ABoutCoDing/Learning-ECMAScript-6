@@ -1,4 +1,4 @@
-## Number
+## ES6 - Number
 ECMA Script 6 길들이기 도서 스터디에서 설명이 부족했던 부분의 글을 재작성했습니다.
 
 #### Number.isSafeInteger(number) Method
