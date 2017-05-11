@@ -1,5 +1,5 @@
 ## Number
-스터디에서 설명이 부족했던 부분을 작성합니다.
+ECMA Script 6 길들이기 도서 스터디에서 설명이 부족했던 부분을 작성합니다.
 
 ##### Number.isSafeInteger(number) Method
 
@@ -20,7 +20,6 @@ Number.isSafeInteger(*number*) 메소드는 숫자들이 Safe Integer 범위내�
     console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER + 1));	// false
     console.log(Number.isSafeInteger(Number.MIN_SAFE_INTEGER));	// true
     console.log(Number.isSafeInteger(Number.MIN_SAFE_INTEGER - 1));	// false	
-
 
 
 #####  Number.EPSILON Property
@@ -92,6 +91,7 @@ Number.EPSILON은 2^-52 (2의 -52승) 의 아주 작은 숫자를 나타냅니�
 	-1344967296	// 하위비트 소실
 	2950000000
 
+참고 : [MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/imul)
 
 
 ##### Math.clz32(number) Method
