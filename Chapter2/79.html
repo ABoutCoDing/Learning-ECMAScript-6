@@ -32,18 +32,20 @@
 
 
       // 세트 (Set)
-//      let set1 = new Set();
-//      let set2 = new Set("안녕하세요!!!");
-//
-//      let set = new Set("안녕하세요!!!");
-//      set.add(12);
-//      console.log(set.has("!"));
-//      console.log(set.size);
-//
-//      set.delete(12);
-//      console.log(...set);
-//
-//      set.clear();
+      let set1 = new Set();
+      let set2 = new Set("안녕하세요!!!");
+
+      let set = new Set("안녕하세요!!!");
+      set.add(12);
+      console.log(...set);
+      console.log('size: ' + set.size);
+      console.log(set.has("!"));
+      console.log(set.size);
+
+      set.delete(12);
+      console.log(...set);
+
+      set.clear();
 
 
       // 위크세트(weakset)
@@ -76,25 +78,25 @@
 
 
       // 위크맵 (weakmap)
-      let weakmap = new WeakMap();
-
-      (function() {
-        let o = {n: 1};
-        weakmap.set(o, "A");
-      })()
-
-      let s = {m: 1};
-
-      weakmap.set(s, "B");  // {Object {n: 1} => "A", Object {m: 1} => "B"}
-      console.log(weakmap.get(s));
-      console.log(...weakmap);  // Cannot spread non-iterable object.
-
-      weakmap.delete(s);
-      weakmap.clear();  // Exception
-
-      let weakmap_1 = new WeakMap([[{},2], [{}, 5]]);
-
-      console.log(weakmap_1.size);
+//      let weakmap = new WeakMap();
+//
+//      (function() {
+//        let o = {n: 1};
+//        weakmap.set(o, "A");
+//      })()
+//
+//      let s = {m: 1};
+//
+//      weakmap.set(s, "B");  // {Object {n: 1} => "A", Object {m: 1} => "B"}
+//      console.log(weakmap.get(s));
+//      console.log(...weakmap);  // Cannot spread non-iterable object.
+//
+//      weakmap.delete(s);
+//      weakmap.clear();  // Exception
+//
+//      let weakmap_1 = new WeakMap([[{},2], [{}, 5]]);
+//
+//      console.log(weakmap_1.size);
 
     </script>
 

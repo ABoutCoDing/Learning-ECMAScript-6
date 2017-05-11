@@ -12,69 +12,71 @@
     <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
 
     <script type="module">
-//  let str1 = '안녕하세요!!!';
-//  let str2 = '안녕하세요!!!';
+//        let str1 = '안녕하세요!!!';
+//        let str2 = '안녕하세요!!!';
 //
-//  console.log(str1 === str2);
+//        console.log(str1 === str2);
 
-  // 표현식
-  // ES5 이전
-//  var a = 20;
-//  var b = 10;
-//  var c = "자바스크립트";
-//  var str = "나는 " + (a+b) + "살이고 " + c + "를 좋아해";
+        // 표현식
+        // ES5 이전
+//        var a = 20;
+//        var b = 10;
+//        var c = "자바스크립트";
+//        var str = "나는 " + (a+b) + "살이고 " + c + "를 좋아해";
 //
-//  console.log(str);
+//        console.log(str);
 
-  // ES6
-//  let a = 20;
-//  let b = 10;
-//  let c = "자바스크립트";
-//  let str = `나는 ${a+b} 살이고 ${c}를 좋아해`; // 주의 ``
+        // ES6
+//        let a = 20;
+//        let b = 10;
+//        let c = "자바스크립트";
+//        let str = `나는 ${a+b} 살이고 ${c}를 좋아해`; // 주의 ``
 //
-//  console.log(str);
+//        console.log(str);
 
 
-//  let tag = function(strings, ...values) {
-//    let result = "";
-//    for (let i = 0; i < strings.length; i++) {
-//      result += strings[i];
-//      if( i < values.length ) {
-//        result += values[i];
+//        let tag = function(strings, ...values) {
+//          let result = "";
+//          console.log(strings);
+//          console.log(values);
+//          for (let i = 0; i < strings.length; i++) {
+//            result += strings[i];
+//            if( i < values.length ) {
+//              result += values[i];
+//            }
+//          }
+//          return result;
+//        };
+//
+//        let a = 20;
+//        let b = 10;
+//        let c = "자바스크립트";
+//
+//        let str = tag `나는 ${a+b}살이고 ${c}를 좋아해`;
+//
+//        console.log(str);
+
+
+        // 여러줄 문자열
+        // ES5 이전
+//        console.log("1\n2\n3");
+
+        // ES6
+//        console.log(`
+//      1
+//      2
+//      3
+//        `);
+
+
+      //  원래 문자열 (raw string)
+//      let s = String.raw `xy\n${ 1 + 1 }z`;
+//      console.log(s);
+//
+//      let tag = function(strings, ...values) {
+//        return string.raw[0];
 //      }
-//    }
-//    return result;
-//  };
-//
-//  let a = 20;
-//  let b = 10;
-//  let c = "자바스크립트";
-//
-//  let str = tag `나는 ${a+b}살이고 ${c}를 좋아해`;
-//
-//  console.log(str);
-
-
-  // 여러줄 문자열
-  // ES5 이전
-//  console.log("1\n2\n3");
-
-  // ES6
-//  console.log(`
-//1
-//2
-//3
-//  `);
-
-
-  //  원래 문자열 (raw string)
-//  let s = String.raw `xy\n${ 1 + 1 }z`;
-//  console.log(s);
-
-//  let tag = function(strings, ...values) {
-//    return string.raw[0];
-//  }
-//  let str = tag `안녕 \n 하세요!!!`;
+//      let str = tag `안녕 \n 하세요!!!`;
 
     </script>
   </body>

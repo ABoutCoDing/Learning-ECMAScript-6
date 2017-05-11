@@ -12,75 +12,77 @@
     <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
 
     <script type="module">
-  // 2진수
-//  let a = 0b00001111; // 10진수 15의 2진수
-//  let b = 15;
+      // 2진수
+//        let a = 0b00001111; // 10진수 15의 2진수
+//        let b = 15;
 //
-//  console.log(a===b);
-//  console.log(a);
+//        console.log(a===b);
+//        console.log(a);
 
-  // 8진수
-//  var a = 017; // 10진수 15의 8진수
-//  var a = 0o17; // ES6
-//  var b = 15;
-//  console.log(a === b);
-//  console.log(a);
+      // 8진수
+//        var a = 017; // 10진수 15의 8진수
+//        var a = 0o17; // ES6
+//        var b = 15;
+//        console.log(a === b);
+//        console.log(a);
 
-  // Number.isInteger(number) 메소드
-//  let a = 17.0;
-//  let b = 1.2;
-//  console.log(Number.isInteger(a));
-//  console.log(Number.isInteger(b));
+      // Number.isInteger(number) 메소드
+//        let a = 17.0;
+//        let b = 1.2;
+//        console.log(Number.isInteger(a));
+//        console.log(Number.isInteger(b));
 
-  // Number.isNaN(value) 메서드
-//  let a = "NaN";
-//  let b = NaN;
-//  let c = "안녕하세요";
-//  let d = 12;
+      // Number.isNaN(value) 메서드
+//        let a = "NaN";
+//        let b = NaN;
+//        let c = "안녕하세요";
+//        let d = 12;
 //
-//  console.log(Number.isNaN(a));
-//  console.log(Number.isNaN(b));
-//  console.log(Number.isNaN(c));
-//  console.log(Number.isNaN(d));
+//        console.log(Number.isNaN(a));
+//        console.log(Number.isNaN(b));
+//        console.log(Number.isNaN(c));
+//        console.log(Number.isNaN(d));
 //
-//  console.log(isNaN(a));
-//  console.log(isNaN(b));
-//  console.log(isNaN(c));
-//  console.log(isNaN(d));
+//        console.log(isNaN(a));
+//        console.log(isNaN(b));
+//        console.log(isNaN(c));
+//        console.log(isNaN(d));
 
-  // Number.isFinite(number) 메소드
-//  console.log(isFinite(10));
-//  console.log(isFinite(NaN));
-//  console.log(isFinite(null));
-//  console.log(isFinite([]));
+      // Number.isFinite(number) 메소드
+//        console.log(isFinite(10));
+//        console.log(isFinite(NaN));
+//        console.log(isFinite(null));
+//        console.log(isFinite([]));
 //
-//  console.log(Number.isFinite(10));
-//  console.log(Number.isFinite(NaN));
-//  console.log(Number.isFinite(null));
-//  console.log(Number.isFinite([]));
+//        console.log(Number.isFinite(10));
+//        console.log(Number.isFinite(NaN));
+//        console.log(Number.isFinite(null));
+//        console.log(Number.isFinite([]));
 
-  // Number.isSafeInteger(number) 메소드
-//  console.log(Number.isSafeInteger(156));
-//  console.log(Number.isSafeInteger('1212'));
-//  console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER));
-//  console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER + 1));
-//  console.log(Number.isSafeInteger(Number.MIN_SAFE_INTEGER));
-//  console.log(Number.isSafeInteger(Number.MIN_SAFE_INTEGER - 1));
+      // Number.isSafeInteger(number) 메소드
+//        console.log(Number.isSafeInteger(156));
+//        console.log(Number.isSafeInteger('1212'));
+//        console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER));
+//        console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER + 1));
+//        console.log(Number.isSafeInteger(Number.MIN_SAFE_INTEGER));
+//        console.log(Number.isSafeInteger(Number.MIN_SAFE_INTEGER - 1));
 
-  // Number.EPSILON 프로퍼티
-//  console.log(0.1 + 0.2 == 0.3);
-//  console.log(0.9 - 0.8 == 0.1);
-//  console.log(0.1 + 0.2);
-//  console.log(0.9 - 0.8);
+      // Number.EPSILON 프로퍼티
+//        console.log(0.1 + 0.2 == 0.3);
+//        console.log(0.9 - 0.8 == 0.1);
+//        console.log(0.1 + 0.2);
+//        console.log(0.9 - 0.8);
 
-  // ES6
-//  function epsilongEqual(a, b){
-//    console.log("a : " + a);
-//    console.log("b : " + b);
-//    return Math.abs(a - b) < Number.EPSILON;
-//  }
-//  console.log(epsilongEqual(0.1 + 0.2, 0.3));
-//  console.log(epsilongEqual(0.9 - 0.8, 0.1));
+      // ES6
+//      function epsilongEqual(a, b){
+//        return Math.abs(a - b) < Number.EPSILON;
+//      }
+//      console.log(epsilongEqual(0.1 + 0.2, 0.3));
+//      console.log(epsilongEqual(0.9 - 0.8, 0.1));
+
+      console.log(0.1 + 0.2 == 0.3);	                 // false
+      console.log((0.1 + 0.2) - 0.3 < Number.EPSILON);  // true
+
     </script>
   </body>
 </html>
