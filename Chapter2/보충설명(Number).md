@@ -1,7 +1,7 @@
 ## Number
 ECMA Script 6 길들이기 도서 스터디에서 설명이 부족했던 부분을 작성합니다.
 
-##### Number.isSafeInteger(number) Method
+#### Number.isSafeInteger(number) Method
 
 기본적으로 자바스크립트의 숫자는 -(2^53 - 1) 부터  +(2^53-1) 숫자로 표현하면 -9007199254740991부터 9007199254740991 로 저장됩니다. (Safe Integer)
 
@@ -22,7 +22,7 @@ Number.isSafeInteger(*number*) 메소드는 숫자들이 Safe Integer 범위내�
     console.log(Number.isSafeInteger(Number.MIN_SAFE_INTEGER - 1));	// false	
 
 
-#####  Number.EPSILON Property
+####  Number.EPSILON Property
 
 자바스크립트의 부동 소수점 연산은 0.1 같은 실수를 이진 부동 소수점(floating point) 방식으로 표현합니다.
 
@@ -62,7 +62,7 @@ Number.EPSILON은 2^-52 (2의 -52승) 의 아주 작은 숫자를 나타냅니�
 
 
 
-##### 산술 연산
+#### 산술 연산
 
 	console.log(Math.log2(16)) ; // 2를 밑으로한로그
 	console.log(Math.log10(1000)); // 10을 밑으로한로그
@@ -74,7 +74,7 @@ Number.EPSILON은 2^-52 (2의 -52승) 의 아주 작은 숫자를 나타냅니�
 
 
 
-##### Math.emul(number1, number2)  Method
+#### Math.emul(number1, number2)  Method
 
 자바스크립트는 기본적으로 64비트 배열정밀도(double-precision) 정수형태로 숫자입니다.
 
@@ -94,7 +94,7 @@ Number.EPSILON은 2^-52 (2의 -52승) 의 아주 작은 숫자를 나타냅니�
 참고 : [MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/imul)
 
 
-##### Math.clz32(number) Method
+#### Math.clz32(number) Method
 
 인자를 32비트(이진수)로 변환한 후 값이 셋팅되지 않은 앞쪽 0비트의 수를 리턴합니다.
 (전치 제로 비트 : leading zero bit) 반환
