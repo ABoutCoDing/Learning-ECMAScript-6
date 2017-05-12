@@ -47,7 +47,7 @@ Number.EPSILON은 2^-52 (2의 -52승) 의 아주 작은 숫자를 나타냅니�
 
 ## 수학연산
 
-##### 삼각 연산
+#### 삼각 연산
 	console.log(Math.sinh(0)); // 하이퍼볼릭 사인값
 	console.log(Math.cosh(0)); // 하이퍼볼릭 코사인 값
 	console.log(Math.tanh(0)); // 하이퍼볼릭 탄젠트 값
