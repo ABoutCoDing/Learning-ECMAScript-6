@@ -36,7 +36,7 @@ Number.isSafeInteger(*number*) 메소드는 숫자들이 Safe Integer 범위내�
 
 	console.log(Number.EPSILON);	//2.220446049250313e-16
 
-Number.EPSILON은 2^-52 (2의 -52승) 의 아주 작은 숫자를 나타냅니다. 두 수의 차이(-)가 Number.EPSILON 보다 작다면 같다라고 판단 할 수 있습니다. 
+Number.EPSILON은 2^-52 (2의 -52승) 의 아주 작은 숫자를 나타냅니다. 두 수의 차이(-)가 Number.EPSILON 보다 작다면 `같다`라고 판단 할 수 있습니다. 
 
     console.log(0.1 + 0.2 == 0.3);	// false
     console.log((0.1 + 0.2) - 0.3 < Number.EPSILON);	// true
