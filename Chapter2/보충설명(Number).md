@@ -20,7 +20,7 @@ Number.isSafeInteger(*number*) 메소드는 숫자들이 Safe Integer 범위내�
     console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER + 1));	// false
     console.log(Number.isSafeInteger(Number.MIN_SAFE_INTEGER));	// true
     console.log(Number.isSafeInteger(Number.MIN_SAFE_INTEGER - 1));	// false	
-
+결과로 확인하는게 가장 확실 하겠죠.
 
 ####  Number.EPSILON Property
 
