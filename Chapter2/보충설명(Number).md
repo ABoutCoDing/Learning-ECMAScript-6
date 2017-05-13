@@ -22,6 +22,8 @@ Number.isSafeInteger(*number*) 메소드는 숫자들이 Safe Integer 범위내�
     console.log(Number.isSafeInteger(Number.MIN_SAFE_INTEGER - 1));	// false	
 결과로 확인하는게 가장 확실 하겠죠.
 
+&nbsp;
+
 ####  Number.EPSILON Property
 
 자바스크립트의 부동 소수점 연산은 0.1 같은 실수를 이진 부동 소수점(floating point) 방식으로 표현합니다.
@@ -43,7 +45,7 @@ Number.EPSILON은 2^-52 (2의 -52승) 의 아주 작은 숫자를 나타냅니�
 
 부동 소수점이나 반올림 문제에 관해 궁금하신 분들은 [부동소수점 타입 표현의 한계](http://dmrl.kangwon.ac.kr/lecture/1501/programming/Data/%EB%B6%80%EB%8F%99%EC%86%8C%EC%88%98%EC%A0%90_%ED%83%80%EC%9E%85_%ED%91%9C%ED%98%84_%ED%95%9C%EA%B3%84.html)를 참고하세요.
 
-
+&nbsp;
 
 ## 수학연산
 
@@ -72,7 +74,7 @@ Number.EPSILON은 2^-52 (2의 -52승) 의 아주 작은 숫자를 나타냅니�
 
 로그함수에 대한 자세한 [로그 함수](https://namu.wiki/w/%EB%A1%9C%EA%B7%B8%ED%95%A8%EC%88%98)를 확인해주세요.
 
-
+&nbsp;
 
 #### Math.emul(*number1*, *number2*)  Method
 
@@ -93,6 +95,7 @@ Number.EPSILON은 2^-52 (2의 -52승) 의 아주 작은 숫자를 나타냅니�
 
 참고 : [MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/imul)
 
+ 
 
 #### Math.clz32(*number*) Method
 
