@@ -1,7 +1,7 @@
 ## ES6 - Number
 ECMA Script 6 길들이기 도서 스터디에서 설명이 부족했던 부분을 보충 설명합니다.
 
-#### Number.isSafeInteger(number) Method
+#### Number.isSafeInteger(*number*) Method
 
 기본적으로 자바스크립트의 숫자는 -(2^53 - 1) 부터  +(2^53-1) 숫자로 표현하면 -9007199254740991부터 9007199254740991 로 저장됩니다. (Safe Integer)
 
@@ -74,7 +74,7 @@ Number.EPSILON은 2^-52 (2의 -52승) 의 아주 작은 숫자를 나타냅니�
 
 
 
-#### Math.emul(number1, number2)  Method
+#### Math.emul(*number1*, *number2*)  Method
 
 자바스크립트는 기본적으로 64비트 배열정밀도(double-precision) 정수형태로 숫자를 표현합니다.
 
@@ -94,7 +94,7 @@ Number.EPSILON은 2^-52 (2의 -52승) 의 아주 작은 숫자를 나타냅니�
 참고 : [MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/imul)
 
 
-#### Math.clz32(number) Method
+#### Math.clz32(*number*) Method
 
 인자를 32비트(이진수)로 변환한 후 값이 셋팅되지 않은 앞쪽 0비트의 수를 리턴합니다.
 (전치 제로 비트 : leading zero bit) 반환
