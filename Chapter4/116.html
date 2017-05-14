@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+  <head>
+    <title>구원자, 프라미스</title>
+  </head>
+  <body>
+    <h1>구원자, 프라미스</h1>
+    
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+    
+      // 프라미스 생성자 
+//      var promise = new Promise(function(resolve, reject) {
+//        var request = new XMLHttpRequest();
+//        var url = "http://127.0.0.1:8888/";
+////      var url = "data.json";
+//        
+//        request.open("GET", url);
+//        
+//        request.addEventListener("load", function() {
+//          if(request.status === 200) {
+////            console.log(request.responseText);
+//            resolve(request.responseText);
+//          } else {
+//            reject("서버 에러: " + request.status);
+//          }
+//        }, false);
+//        
+//        request.addEventListener("error", function() {
+//          reject("AJAX 요청 실패");
+//        }, false);
+//        
+//        request.send();
+//      });
+      
+      
+      // 이룸값 (Fulfillment Value)
+//      var A = new Promise(function(resolve, reject) {
+//        var B = new Promise(function(res, rej) {
+//                              rej("사유");
+//                            });
+//        resolve(B);
+//      });
+//      
+//      var C = new Promise(function(resolve, reject){
+//        var D = new Promise(function(res, rej) {
+//                              res("결과");
+//                            });
+//        resolve(D);
+//      });
+      
+      
+      // then(onFulfilledm onRejected) 메소드
+//      var promise = new Promise(function(resolve, reject){
+//        var request = new XMLHttpRequest();
+//        var url = "http://127.0.0.1:8888/";
+//        request.open("GET", url);
+//        request.addEventListener("load", function() {
+//          if(request.status === 200) {
+//            console.log(request.responseText);
+//            resolve(request.responseText);
+//          } else {
+//            reject("서버 에러: " + request.status);
+//          }
+//        }, false);
+//        request.addEventListener("error", function(){
+//          reject("AJAX 요청 실패");
+//        }, false);
+//        
+//        request.send();
+//      });
+//      
+//      promise.then(function(value) {
+//        value = JSON.parse(value);
+//        return value;
+//      }, function(reason){
+//        console.log(reason);
+//      });
+      
+      
+      // #2 121
+//      function ajax() {
+//        return new Promise(function(resolve, reject) {
+//          var request = new XMLHttpRequest();
+//          var url = "http://127.0.0.1:8888/";
+//          
+//          request.open("GET", url);
+//          request.addEventListener("load", function() {
+//            if (request.status === 200) {
+//              console.log(request.responseText);
+//              resolve(request.responseText);
+//            } else {
+//              reject("서버 에러: " + request.status);
+//            }
+//          }, false);
+//          
+//          request.addEventListener("error", function() {
+//            reject("AJAX 요청 실패");
+//          }, false);
+//          
+//          request.send();
+//        });
+//      }
+//      
+//      ajax().then(function(value){
+//        value = JSON.parse(value);
+//        return value;
+//      }, function(reason) {
+//        console.log(reason);
+//      });
+      
+      
+      // #3 122
+//      function ajax(){
+//        return new Promise(function(resolve, reject) {
+//          var request = new XMLHttpRequest();
+//          var url = "http://127.0.0.1:8888/";
+//          request.open("GET", url);
+//          request.addEventListener("load", function(){
+//            if (request.status === 200) {
+//              resolve(request.responseText);
+//            } else {
+//              reject("서버 에러 : " + request.status);
+//            }
+//          }, false);
+//          request.addEventListener("error",function() { 
+//            reject("AJAX 요청 실패");
+//          }, false);
+//          
+//          request.send();
+//        });
+//      }
+//      
+//      ajax().then(function(value) {
+//        value = JSON.parse(value);
+//        return value;
+//      }).then(function(value){
+//        console.log(value.Name);
+//        return value;
+//      }).then(function(value){
+//        console.log(value.Profession);
+//        return value;
+//      }).then(function(value){
+//        console.log(value.Age);
+//        return value;
+//      }).then(null, function(reason){
+//        console.log(reason);
+//      });
+      
+      
+      // #3 124
+      function ajax(){
+        return new Promise(function(resolve, reject) {
+          var request = new XMLHttpRequest();
+          var url = "http://127.0.0.1:8888/";
+          request.open("GET", url);
+          request.addEventListener("load", function(){
+            if (request.status === 200) {
+              resolve(request.responseText);
+            } else {
+              reject("서버 에러 : " + request.status);
+            }
+          }, false);
+          request.addEventListener("error",function() { 
+            reject("AJAX 요청 실패");
+          }, false);
+          
+          request.send();
+        });
+      }
+      
+      function verify(value) {
+        return new Promise(function(resolve, reject) {
+          if (value == true) {
+            console.log("AJAX 요청하여 서버에 데이터를 전송한다.");
+          } else {
+            console.log("AJAX 요청하여 서버에 데이터를 전송한다. 2");
+          }
+        })
+      }
+      
+      ajax().then(function(value) {
+        value = JSON.parse(value);
+        return value;
+      }).then(function(value){
+        console.log(value.Name);
+        return value;
+      }).then(function(value){
+        console.log(value.Profession);
+        return value;
+      }).then(function(value){
+        console.log(value.Age);
+        return value;
+      }).then(function(value) {
+        var result = confirm("데이터가 정확한가요?");
+        return result;
+      }).then(verify).then(null, function(reason) {
+        console.log(reason);
+      });      
+    </script>
+  </body>
+</html>

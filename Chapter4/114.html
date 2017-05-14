@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <title>비동기 코드 작성</title>
+  </head>
+  <body>
+    <h1>비동기 코드 작성 - 콜백을 포함한 비동기 코드</h1>
+    
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script type="module">
+    
+      // 콜백을 포함한 비동기 코드
+      function displayName(json) {
+        try {
+          // 보통 DOM을 이용해서 화면에 표시한다.
+          console.log(json.Name);
+        } catch (e) {
+          console.log("예외: " + e.message);
+        }
+      }
+      
+      function displayProfession(json) {
+        try {
+          console.log(json.Profession);
+        } catch (e) {
+          console.log("예외: " + e.message);
+        }
+      }
+      
+      function displayAge(json) {
+        try {
+          console.log(json.Age);
+        } catch(e) {
+          console.log("예외: " + e.message);
+        }
+      }
+      
+      function displayData(data) {
+        try {
+          var json = JSON.parse(data);
+          
+          displayName(json);
+          displayProfession(json);
+          displayAge(json);
+
+        } catch (e) {
+          console.log("예외: " + e.message);
+        }
+      }
+      
+      $(document).ready(function() {
+        $.ajax({url: "http://127.0.0.1:8888/", success: function(result, status, responseObject) {
+          displayData(responseObject.responseText);
+        }, error: function(xhr, status, error) {
+          console.log("AJAX 요청을 할 수 없습니다. 에러 내용은 " + error);
+        }});
+      });
+    </script>
+  </body>
+</html>

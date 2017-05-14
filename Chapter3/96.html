@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <title>이터레이션 규약</title>
+  </head>
+  <body>
+    <h1>이터레이션 규약</h1>
+    
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+      // 이터레이터 규약
+//      let obj = {
+//        array: [1, 2, 3, 4, 5],
+//        nextIndex: 0,
+//        next: function() {
+//          return this.nextIndex < this.array.length ? 
+//            {value: this.array[this.nextIndex++], done: false} :
+//            {done: true};
+//        }
+//      };
+//      console.log(obj.next().value);
+//      console.log(obj.next().value);
+//      console.log(obj.next().value);
+//      console.log(obj.next().value);
+//      console.log(obj.next().value);
+//      console.log(obj.next().done);
+      
+      
+      // 이터러블 규약
+//      let obj = { 
+//        array: [1, 2, 3, 4, 5],
+//        nextIndex: 0,
+//        [Symbol.iterator]: function() {
+//          return {
+//            array: this.array,
+//            nextIndex: this.nextIndex,
+//            next: function() {
+//              return this.nextIndex < this.array.length ?
+//                {value: this.array[this.nextIndex++], done: false} : 
+//                {done: true};
+//            }
+//          }
+//        }
+//      }
+//      
+//      let iterable =  obj[Symbol.iterator]();
+//      
+//      console.log(iterable.next().value);
+//      console.log(iterable.next().value);
+//      console.log(iterable.next().value);
+//      console.log(iterable.next().value);
+//      console.log(iterable.next().value);
+//      console.log(iterable.next().done);
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <title>프록시란?</title>
+  </head>
+  <body>
+    <h1>프록시란?</h1>
+    
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+      // 프록시 API
+      // #1
+//      var target = {
+//        age: 12
+//      };
+//      var handler = {};
+//      var proxy = new Proxy(target, handler);
+//      
+//      proxy.name = "수지";
+//      console.log(target.name);
+//      console.log(proxy.name);
+//      console.log(target.age);
+//      console.log(proxy.age);
+      
+      
+      // #2
+//      var proxy = new Proxy({
+//        age: 12
+//      }, {});
+//       
+//      proxy.name = "수지";
+      
+      
+      // 트랩
+      // get(target,property, receiver) 메소드
+      // #1
+//      var proxy = new Proxy({
+//        age: 12
+//      }, {
+//          get: function(target, property, receiver) {
+//            if (property in target) {
+//              return target[property];
+//            } else {
+//              return "찾지 못함";
+//            }
+//          }
+//        }
+//      );
+//      
+//      console.log(Reflect.get(proxy, "age"));
+//      console.log(Reflect.get(proxy, "name"));
+      
+      
+      // #2 - 무한루프
+//      var proxy = new Proxy({age: 13}, {
+//        get: function(target, property, receiver) {
+//          
+//          console.log(receiver);
+//          
+//          if (property in target) {
+//            console.log(receiver);
+//            return target[property];
+//          } else {
+//            return "찾지 못함";
+//          }
+//        }
+//      });
+//      
+//      var temp = proxy.name;
+//      
+//      var obj = {
+//        age: 12,
+//        __proto__: proxy
+//      }
+//      
+//      temp = obj.name;
+      
+      
+    </script>
+  </body>
+</html>

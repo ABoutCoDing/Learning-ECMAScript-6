@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <title>프라미스 기반의 자바스크립트 API</title>
+  </head>
+  <body>
+    <h1>프라미스 기반의 자바스크립트 API</h1>
+    
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+    
+      // 배터리 상태 API
+//      navigator.getBattery().then(function(value){
+//        console.log("배터리 상태: "  + (value.level * 100)); // 노트북도..
+//      }, function(reason) {
+//        console.log("에러: " + reason);
+//      })
+      
+      
+      // 웹암호화 API
+      function convertStringToArrayBufferView(str) {
+        var bytes= new Uint8Array(str.length);
+        for (var iii = 0; iii < str.length; iii++) {
+          bytes[iii] = str.charCodeAt(iii);
+        }
+        
+        return bytes;
+      }
+      
+      function convertArrayBufferToHexaDecimal(buffer) {
+        var data_view = new DataView(buffer);
+        var iii, len, hex = '', c;
+        
+        for (iii = 0, len = data_view.byteLength; iii < len; iii++) {
+          c = data_view.getUint8(iii).toString(16);
+          if(c.length < 2) {
+            c = '0' + c;
+          } 
+          
+          hex += c;
+        }
+        
+        return hex;
+      }
+      
+      window.crypto.subtle.digest({name: "SHA-256"}, convertStringToArrayBufferView("ECMA Script 6")).then(function(result){
+        var hash_value = convertArrayBufferToHexaDecimal(result);
+        console.log(hash_value);
+      });
+      
+    </script>
+  </body>
+</html>

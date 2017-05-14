@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <title>ES6 심볼</title>
+  </head>
+  <body>
+    <h1>ES6 심볼</h1>
+   
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+//      var a = Symbol();
+//      let s1 = window.Symbol("내 심볼");
+//      let s2 = window.Symbol("내 심볼");
+//      
+//      console.log(s1 === s2); // false
+      
+      
+      // typeof 연산자
+//      var s = Symbol();
+//      console.log(typeof s);  // Symbol
+      
+      
+      // new 연산자 
+//      try {
+//        let a = new Symbol(); // TypeError
+//      } catch (e) {
+//        console.log(e.message); // Symbol is not a constructor
+//      }
+      
+      
+      // 심볼을 프로퍼티 키로 사용
+//      let obj = null;
+//      let s1 = null;
+//      
+//      (function() {
+//        let s2 = Symbol();
+//        s1 = s2;
+//        obj = {[s2]: "내 심볼"};
+//        console.log(obj[s2]); // 내심볼
+//        console.log(obj[s2] == obj[s1]);  // true
+//      })();
+//      console.log(obj[s1]); // 내 심볼
+      
+      
+      // Objet.getOwnPropertySymbols() 메소드
+//      let obj = {a: 12};
+//      let s1 = Symbol("내 심볼");
+//      let s2 = Symbol("내 심볼");
+//      
+//      Object.defineProperty(obj, s1, {
+//        enumerable: false
+//      });
+//      
+//      obj[s2] = "";
+//      
+//      console.log(Object.getOwnPropertySymbols(obj));
+      
+      
+      // Symbol.for(string) 메소드
+//      let obj = {};
+//      
+//      (function() {
+//        let s1 = Symbol("name");
+//        obj[s1] = "수지";
+//      })();
+//      
+//      // 여기서 obj[s1]은 접근 불가
+//      
+//      (function() {
+//        let s2 = Symbol.for("age");
+//        obj[s2] = 27;
+//      })();
+//      
+//      console.log(obj[Symbol.for("age")]);  // 27
+      
+      
+      // 상용 심볼
+      
+    </script>
+  </body>
+</html>

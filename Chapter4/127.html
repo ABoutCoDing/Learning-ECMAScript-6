@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+  <head>
+    <title>구원자, 프라미스</title>
+  </head>
+  <body>
+    <h1>구원자, 프라미스 - catch(onRejected) 메소드</h1>
+    
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+    
+      // 구원자, 프라미스 - catch(onRejected) 메소드
+//      function ajax(){
+//        return new Promise(function(resolve, reject) {
+//          var request = new XMLHttpRequest();
+//          var url = "http://127.0.0.1:8888/";
+//          request.open("GET", url);
+//          request.addEventListener("load", function(){
+//            if (request.status === 200) {
+//              resolve(request.responseText);
+//            } else {
+//              reject("서버 에러 : " + request.status);
+//            }
+//          }, false);
+//          request.addEventListener("error",function() { 
+//            reject("AJAX 요청 실패");
+//          }, false);
+//          
+//          request.send();
+//        });
+//      }
+//      
+//      function verify(value) {
+//        return new Promise(function(resolve, reject) {
+//          if (value == true) {
+//            console.log("AJAX 요청하여 서버에 데이터를 전송한다.");
+//          } else {
+//            console.log("AJAX 요청하여 서버에 데이터를 전송한다. 2");
+//          }
+//        })
+//      }
+//      
+//      ajax().then(function(value) {
+//        value = JSON.parse(value);
+//        return value;
+//      }).then(function(value){
+//        console.log(value.Name);
+//        return value;
+//      }).then(function(value){
+//        console.log(value.Profession);
+//        return value;
+//      }).then(function(value){
+//        console.log(value.Age);
+//        return value;
+//      }).then(function(value) {
+//        var result = confirm("데이터가 정확한가요?");
+//        return result;
+//      }).then(verify)       //  추가
+//        .catch(function(reason){
+//        console.log(reason);
+//      });
+      
+      
+      // Promise.resolve(value) 메소드
+//      var p1 = Promise.resolve(4);
+//      p1.then(function(value){
+//        console.log(value);
+//      });
+//      
+//      // Promise 객체를 전달
+//      Promise.resolve(p1).then(function(value){
+//        console.log(value);
+//      });
+//      
+//      Promise.resolve({name: "수지"}).then(function(value) {
+//        console.log(value.name);
+//      });
+      
+      
+      // Promise.reject(value) 메소드
+//      var p1 = Promise.reject(4);
+//      p1.then(null, function(value) {
+//        console.log(value);
+//      });
+//      
+//      Promise.reject({name: "수지"}).then(null, function(value) {
+//        console.log(value.name);
+//      });
+      
+      
+      // Promise.all(iterable) 메소드
+//      var p1 = new Promise(function(resolve, reject) {
+//        setTimeout(function(){
+//          resolve();
+//        }, 1000);
+//      });
+//      
+//      var p2 = new Promise(function(resolve, reject) {
+//        setTimeout(function() {
+//          resolve();
+//        }, 2000);
+//      });
+//      
+//      var arr = [p1, p2];
+//      
+//      Promise.all(arr).then(function(){
+//        console.log("Done");
+//      });
+      
+      
+      // Promise.race(iterable) 메소드
+      var p1 = new Promise(function(resolve, reject) {
+        setTimeout(function(){
+          resolve("이름값 1");
+        }, 1000);
+      });
+      
+      var p2 = new Promise(function(resolve, reject) {
+        setTimeout(function(){
+          resolve("이름값 2");
+        }, 2000);
+      });
+      
+      var arr = [p1, p2];
+      
+      Promise.race(arr).then(function(value) {
+        console.log(value);
+      }, function(reason) {
+        console.log(reason);
+      });
+    </script>
+  </body>
+</html>

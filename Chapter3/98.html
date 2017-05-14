@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+  <head>
+    <title>제너레이터</title>
+  </head>
+  <body>
+    <h1>제너레이터</h1>
+   
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+      // #1
+//      function * generator_function(){
+//        yield 1;
+//        yield 2;
+//        yield 3;
+//        yield 4;
+//        yield 5;
+//      }
+//      
+//      let generator = generator_function();
+//      
+//      console.log(generator.next().value);
+//      console.log(generator.next().value);
+//      console.log(generator.next().value);
+//      console.log(generator.next().value);
+//      console.log(generator.next().value);
+//      console.log(generator.next().done);
+//      
+//      generator = generator_function();
+//      
+//      console.log(generator.next().value);
+//      console.log(generator.next().value);
+//      console.log(generator.next().value);
+//      console.log(generator.next().value);
+//      console.log(generator.next().value);
+//      console.log(generator.next().done);
+      
+      
+      // #2
+//      function* generator_function(){
+//        var a = yield 12;
+//        var b = yield a + 1;
+//        var c = yield b + 2;
+//        yield c + 3;
+//      }
+//      
+//      var generator = generator_function();
+//      
+//      console.log(generator.next().value);
+//      console.log(generator.next(5).value);
+//      console.log(generator.next(11).value);
+//      console.log(generator.next(78).value);
+//      console.log(generator.next().done);
+      
+      
+      // return(value) 메소드
+//      function* generator_function() {
+//        yield 1;
+//        yield 2;
+//        yield 3;
+//      }
+//      
+//      var generator = generator_function();
+//      
+//      console.log(generator.next().value);
+//      console.log(generator.return(22).value);
+//      console.log(generator.next().done);
+      
+      
+      // throw(exception) 메소드
+//      function* generator_function() {
+//        try {
+//          yield 1;
+//        } catch (e) {
+//          console.log("첫 번째 예외");
+//        }
+//        
+//        try {
+//          yield 2;
+//        } catch(e) {
+//          console.log("두 번째 예외");
+//        }
+//      }
+//      
+//      var generator = generator_function();
+//      
+//      console.log(generator.next().value);
+//      console.log(generator.throw("예외 문자열").value);
+//      console.log(generator.throw("예외 문자열").done);
+      
+      
+      
+      // yield* 키워드
+//      function* generator_function_1(){
+//        yield 2;
+//        yield 3;
+//      }
+//      
+//      function* generator_function_2(){
+//        yield 1;
+//        yield* generator_function_1();
+//        yield* [4, 5];
+//      }
+//      
+//      var generator = generator_function_2();
+//      
+//      console.log(generator.next().value);
+//      console.log(generator.next().value);
+//      console.log(generator.next().value);
+//      console.log(generator.next().value);
+//      console.log(generator.next().value);
+//      console.log(generator.next().done);
+      
+      
+      //for...of 루프
+      function* generator_function(){
+        yield 1;
+        yield 2;
+        yield 3;
+        yield 4;
+        yield 5;
+      }
+      
+      let arr = [1, 2, 3];
+      
+      for(let value of generator_function()) {
+        console.log(value);
+      }
+      
+      for(let value of arr){
+        console.log(value);
+      }
+      
+      
+    </script>
+  </body>
+</html>

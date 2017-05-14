@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <title>꼬리 호출 최적화</title>
+  </head>
+  <body>
+    <h1>꼬리 호출 최적화</h1>
+    
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+//      "use strict";
+//      
+//      function _add(x, y){
+//        return x + y;
+//      }
+//      
+//      function add1(x, y){
+//        x = parseInt(x);
+//        y = parseInt(y);
+//        
+//        // 꼬리호출
+//        return _add(x, y);
+//      }
+//      
+//      function add2(x, y){
+//        x = parseInt(x);
+//        y = parseInt(y);
+//        
+//        // 꼬리 호출 아님
+//        return 0 + _add(x, y);
+//      }
+//      
+//      console.log(add1(1, '1'));
+//      console.log(add2(1, '2'));
+      
+      
+      // 꼬리 호출 아닌 코드를 꼬리 호출로 전환
+      "use strict"
+      
+      function _add(x, y) {
+        return x + y;
+      }
+      
+      function add(x, y) {
+        x = parseInt(x);
+        y = parseInt(y);
+        
+        var result = _add(x, y);
+        return result;
+      }
+      
+      console.log(add(1, '1'));
+      
+//      function add(x, y) {
+//        x = parseInt(x);
+//        y = parseInt(y);
+//        
+//        return _add(x, y);
+//      }
+      
+    </script>
+  </body>
+</html>

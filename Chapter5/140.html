@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Reflect.</title>
+  </head>
+  <body>
+    <h1>Reflect 객체</h1>
+    
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+    
+      // Reflect.apply(function, this, args) 메소드
+//      function function_name(a, b, c) {
+//        return this.value + a + b + c;
+//      }
+//      
+//      var returned_value = Reflect.apply(function_name, {value: 100}, [10, 20, 30]);
+//      
+//      console.log(returned_value);
+      
+      
+      // Reflect.constuct(constructor, args, prototype) 메소드
+      function constructor1(a, b) {
+        this.a = a;
+        this.b = b;
+        
+        this.f = function() {
+          return this.a + this.b + this.c;
+        }
+      }
+      
+      function constructor2() {}
+      constructor2.prototype.c = 100;
+      
+      var myObject = Reflect.construct(constructor1, [1, 2], constructor2);
+      
+      console.log(myObject.f());
+    </script>
+  </body>
+</html>
