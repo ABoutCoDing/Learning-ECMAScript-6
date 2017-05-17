@@ -1,6 +1,7 @@
 <!doctype html>
-<html>
+<html lang="ko">
   <head>
+    <meta charset="UTF-8">
     <title>ES6 심볼</title>
   </head>
   <body>
@@ -48,14 +49,14 @@
       
       // Objet.getOwnPropertySymbols() 메소드
 //      let obj = {a: 12};
-//      let s1 = Symbol("내 심볼");
-//      let s2 = Symbol("내 심볼");
+//      let s1 = Symbol("s1 symbol");
+//      let s2 = Symbol("s2 symbol");
 //      
 //      Object.defineProperty(obj, s1, {
 //        enumerable: false
 //      });
 //      
-//      obj[s2] = "";
+//      obj[s2] = ""; // 변경 할 수 없다.
 //      
 //      console.log(Object.getOwnPropertySymbols(obj));
       
@@ -68,6 +69,7 @@
 //        obj[s1] = "수지";
 //      })();
 //      
+////      console.log(obj[name]); // undefined
 //      // 여기서 obj[s1]은 접근 불가
 //      
 //      (function() {
@@ -78,7 +80,8 @@
 //      console.log(obj[Symbol.for("age")]);  // 27
       
       
-      // 상용 심볼
+      // 상용심볼 (Well Known Symbols)
+
       
     </script>
   </body>

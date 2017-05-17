@@ -1,10 +1,11 @@
 <!doctype html>
-<html>
+<html lang="ko">
   <head>
-    <title>이터레이션 규약</title>
+    <meta charset="UTF-8">
+    <title>이터레이션 규약(iteration protocol)</title>
   </head>
   <body>
-    <h1>이터레이션 규약</h1>
+    <h1>이터레이션 규약(iteration protocol)</h1>
     
     <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
     <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
@@ -12,14 +13,14 @@
     <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
 
     <script type="module">
-      // 이터레이터 규약
+      // 이터레이터 규약 (iterator protocol)
 //      let obj = {
 //        array: [1, 2, 3, 4, 5],
 //        nextIndex: 0,
 //        next: function() {
 //          return this.nextIndex < this.array.length ? 
 //            {value: this.array[this.nextIndex++], done: false} :
-//            {done: true};
+//            {done: true}; // done true 로 바뀐다.
 //        }
 //      };
 //      console.log(obj.next().value);
@@ -30,7 +31,7 @@
 //      console.log(obj.next().done);
       
       
-      // 이터러블 규약
+      // 이터러블 규약  (iterable protocol)
 //      let obj = { 
 //        array: [1, 2, 3, 4, 5],
 //        nextIndex: 0,

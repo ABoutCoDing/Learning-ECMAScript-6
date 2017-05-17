@@ -1,6 +1,7 @@
 <!doctype html>
-<html>
+<html lang="ko">
   <head>
+    <meta charset="UTF-8">
     <title>화살표 함수(arrow function)</title>
   </head>
   <body>
@@ -10,7 +11,7 @@
     <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
     <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
 
-    <script type="module" >
+    <script type="module">
 //      let circleArea = (pi, r) => {
 //        let area = pi * r * r;
 //        return area;
@@ -31,7 +32,9 @@
 //      let result = circleArea(3.14, 3);
 //      console.log(result);
 
+    </script>
 
+    <script>
       // 화살표 함수에서의 this의 값
 //      var object = {
 //        f1: function() {
@@ -47,13 +50,14 @@
 //      var object = {
 //        f1: () => {
 //          console.log(this);
-//          var f2 = function () { console.log(this); }
+//          var f2 = () => { console.log(this); }
 //          f2();
 //          setTimeout(f2, 1000);
 //        }
 //      }
 //      object.f1();
 
+      console.log(this);
     </script>
   </body>
 </html>

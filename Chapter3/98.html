@@ -1,10 +1,11 @@
 <!doctype html>
-<html>
+<html lang="ko">
   <head>
-    <title>제너레이터</title>
+    <meta charset="UTF-8">
+    <title>제너레이터 (generator)</title>
   </head>
   <body>
-    <h1>제너레이터</h1>
+    <h1>제너레이터 (generator)</h1>
    
     <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
     <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
@@ -32,12 +33,14 @@
 //      
 //      generator = generator_function();
 //      
-//      console.log(generator.next().value);
-//      console.log(generator.next().value);
-//      console.log(generator.next().value);
-//      console.log(generator.next().value);
-//      console.log(generator.next().value);
-//      console.log(generator.next().done);
+//      let iterable = generator[Symbol.iterator]();
+//
+//      console.log(iterable.next().value);
+//      console.log(iterable.next().value);
+//      console.log(iterable.next().value);
+//      console.log(iterable.next().value);
+//      console.log(iterable.next().value);
+//      console.log(iterable.next().done);
       
       
       // #2
@@ -50,11 +53,11 @@
 //      
 //      var generator = generator_function();
 //      
-//      console.log(generator.next().value);
-//      console.log(generator.next(5).value);
-//      console.log(generator.next(11).value);
-//      console.log(generator.next(78).value);
-//      console.log(generator.next().done);
+//      console.log(generator.next().value);    // 12,    a
+//      console.log(generator.next(5).value);   // 6,     b
+//      console.log(generator.next(11).value);  // 13,    c
+//      console.log(generator.next(78).value);  // 81,    d
+//      console.log(generator.next().done);     // true
       
       
       // return(value) 메소드
@@ -67,7 +70,7 @@
 //      var generator = generator_function();
 //      
 //      console.log(generator.next().value);
-//      console.log(generator.return(22).value);
+//      console.log(generator.return(22).value);  // 22 끝
 //      console.log(generator.next().done);
       
       
@@ -88,9 +91,9 @@
 //      
 //      var generator = generator_function();
 //      
-//      console.log(generator.next().value);
-//      console.log(generator.throw("예외 문자열").value);
-//      console.log(generator.throw("예외 문자열").done);
+//      console.log(generator.next().value);  // 1
+//      console.log(generator.throw("예외 문자열").value); // 첫번째 예외, 2,  예외가 발생하면 다음 yield 가 실행된다.
+//      console.log(generator.throw("예외 문자열").done);  // 두번째 예외, true    yield 2가 실행되었기 때문에 끝
       
       
       
@@ -102,7 +105,7 @@
 //      
 //      function* generator_function_2(){
 //        yield 1;
-//        yield* generator_function_1();
+//        yield* generator_function_1();  // 2, 3
 //        yield* [4, 5];
 //      }
 //      
@@ -117,23 +120,23 @@
       
       
       //for...of 루프
-      function* generator_function(){
-        yield 1;
-        yield 2;
-        yield 3;
-        yield 4;
-        yield 5;
-      }
-      
-      let arr = [1, 2, 3];
-      
-      for(let value of generator_function()) {
-        console.log(value);
-      }
-      
-      for(let value of arr){
-        console.log(value);
-      }
+//      function* generator_function(){
+//        yield 1;
+//        yield 2;
+//        yield 3;
+//        yield 4;
+//        yield 5;
+//      }
+//
+//      let arr = [1, 2, 3];
+//
+//      for(let value of generator_function()) {
+//        console.log(value);
+//      }
+//
+//      for(let value of arr){
+//        console.log(value);
+//      }
       
       
     </script>
