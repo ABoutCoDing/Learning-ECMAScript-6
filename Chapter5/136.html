@@ -1,6 +1,7 @@
 <!doctype html>
-<html>
+<html lang="ko">
   <head>
+    <meta charset="UTF-8">
     <title>Reflect 객체</title>
   </head>
   <body>
@@ -70,8 +71,8 @@
 //        enumerable: true
 //      });
 //      
-//      obj.name = "민호";
-//      console.log(obj.name);
+//      obj.name = "민호";  // set
+//      console.log(obj.name);  // get
       
       
       
@@ -96,8 +97,7 @@
 //        c: 3
 //      }
 //      
-//      var iterator = Reflect.enumerate(obj);
-//      console.log("111");
+//      var iterator = Reflect.enumerate(obj);  // Reflect.enumerate is not a function
 //      console.log(iterator.next().value);
 //      console.log(iterator.next().value);
 //      console.log(iterator.next().value);
@@ -115,11 +115,11 @@
 //        }
 //      });
 //      
-//      console.log(obj.name);
+//      console.log(obj.name);  // 수지
 //      
 //      var name = Reflect.get(obj, "name", {__name__: "민호"});
 //      
-//      console.log(name);
+//      console.log(name);  // 민호
       
       
       // Reflect.set(object, property, value, this) 메소드
