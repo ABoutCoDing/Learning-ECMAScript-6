@@ -40,22 +40,24 @@
       
       
       // 꼬리 호출 아닌 코드를 꼬리 호출로 전환
-      "use strict"
+      // #1
+//      "use strict"
+//
+//      function _add(x, y) {
+//        return x + y;
+//      }
+//
+//      function add(x, y) {
+//        x = parseInt(x);
+//        y = parseInt(y);
+//
+//        var result = _add(x, y);  // 임시변수에 담는다.
+//        return result;
+//      }
+//
+//      console.log(add(1, '1'));
       
-      function _add(x, y) {
-        return x + y;
-      }
-      
-      function add(x, y) {
-        x = parseInt(x);
-        y = parseInt(y);
-        
-        var result = _add(x, y);
-        return result;
-      }
-      
-      console.log(add(1, '1'));
-      
+      // #2
 //      function add(x, y) {
 //        x = parseInt(x);
 //        y = parseInt(y);
