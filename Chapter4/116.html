@@ -1,7 +1,8 @@
 <!doctype html>
-<html>
+<html lang="ko">
   <head>
-    <title>구원자, 프라미스</title>
+    <meta charset="UTF-8">
+    <title>구원자, 프라미스 #1</title>
   </head>
   <body>
     <h1>구원자, 프라미스</h1>
@@ -74,10 +75,10 @@
 //        request.send();
 //      });
 //      
-//      promise.then(function(value) {
+//      promise.then(function(value) {  // onFulfilled
 //        value = JSON.parse(value);
 //        return value;
-//      }, function(reason){
+//      }, function(reason){  // onRejected
 //        console.log(reason);
 //      });
       
@@ -160,6 +161,7 @@
           request.open("GET", url);
           request.addEventListener("load", function(){
             if (request.status === 200) {
+              console.log(request.responseText);
               resolve(request.responseText);
             } else {
               reject("서버 에러 : " + request.status);
@@ -200,7 +202,7 @@
         return result;
       }).then(verify).then(null, function(reason) {
         console.log(reason);
-      });      
+      });
     </script>
   </body>
 </html>

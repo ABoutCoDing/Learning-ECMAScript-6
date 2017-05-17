@@ -1,6 +1,7 @@
 <!doctype html>
-<html>
+<html lang="ko">
   <head>
+    <meta charset="UTF-8">
     <title>비동기 코드 작성</title>
   </head>
   <body>
@@ -55,11 +56,15 @@
       }
       
       $(document).ready(function() {
-        $.ajax({url: "http://127.0.0.1:8888/", success: function(result, status, responseObject) {
-          displayData(responseObject.responseText);
-        }, error: function(xhr, status, error) {
-          console.log("AJAX 요청을 할 수 없습니다. 에러 내용은 " + error);
-        }});
+        $.ajax({
+          url: "http://127.0.0.1:8888/",
+          success: function(result, status, responseObject) {
+            displayData(responseObject.responseText);
+          },
+          error: function(xhr, status, error) {
+            console.log("AJAX 요청을 할 수 없습니다. 에러 내용은 " + error);
+          }
+        });
       });
     </script>
   </body>

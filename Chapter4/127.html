@@ -1,10 +1,11 @@
 <!doctype html>
-<html>
+<html lang="ko">
   <head>
+    <meta charset="UTF-8">
     <title>구원자, 프라미스</title>
   </head>
   <body>
-    <h1>구원자, 프라미스 - catch(onRejected) 메소드</h1>
+    <h1>구원자, 프라미스 #2</h1>
     
     <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
     <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
@@ -66,12 +67,13 @@
       
       
       // Promise.resolve(value) 메소드
+      // #1
 //      var p1 = Promise.resolve(4);
 //      p1.then(function(value){
 //        console.log(value);
 //      });
-//      
-//      // Promise 객체를 전달
+
+      // #2 Promise 객체를 전달
 //      Promise.resolve(p1).then(function(value){
 //        console.log(value);
 //      });
@@ -93,6 +95,7 @@
       
       
       // Promise.all(iterable) 메소드
+      // #1
 //      var p1 = new Promise(function(resolve, reject) {
 //        setTimeout(function(){
 //          resolve();
@@ -108,30 +111,50 @@
 //      var arr = [p1, p2];
 //      
 //      Promise.all(arr).then(function(){
-//        console.log("Done");
+//        console.log("Done");  // 2초후에 Done 표시
 //      });
       
       
+      // #2
+//      var p1 = new Promise(function(resolve, reject) {
+//        setTimeout(function(){
+//          reject("에러");
+//        }, 1000);
+//      });
+//
+//      var p2 = new Promise(function(resolve, reject) {
+//        setTimeout(function() {
+//          resolve();
+//        }, 2000);
+//      });
+//
+//      var arr = [p1, p2];
+//
+//      Promise.all(arr).then(null, function(reason){
+//        console.log(reason);
+//      });
+
+      
       // Promise.race(iterable) 메소드
-      var p1 = new Promise(function(resolve, reject) {
-        setTimeout(function(){
-          resolve("이름값 1");
-        }, 1000);
-      });
-      
-      var p2 = new Promise(function(resolve, reject) {
-        setTimeout(function(){
-          resolve("이름값 2");
-        }, 2000);
-      });
-      
-      var arr = [p1, p2];
-      
-      Promise.race(arr).then(function(value) {
-        console.log(value);
-      }, function(reason) {
-        console.log(reason);
-      });
+//      var p1 = new Promise(function(resolve, reject) {
+//        setTimeout(function(){
+//          resolve("이름값 1");
+//        }, 1000);
+//      });
+//
+//      var p2 = new Promise(function(resolve, reject) {
+//        setTimeout(function(){
+//          resolve("이름값 2");
+//        }, 2000);
+//      });
+//
+//      var arr = [p1, p2];
+//
+//      Promise.race(arr).then(function(value) {
+//        console.log(value);
+//      }, function(reason) {
+//        console.log(reason);
+//      });
     </script>
   </body>
 </html>
