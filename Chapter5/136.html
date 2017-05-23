@@ -14,7 +14,7 @@
 
     <script type="module">
     
-      // Reflect.apply(function, this, args) 메소드
+      // Reflect.apply(function, this, args) 메소드 136p
 //      function function_name(a, b, c) {
 //        return this.value + a + b + c;
 //      }
@@ -24,7 +24,7 @@
 //      console.log(returned_value);
       
       
-      // Reflect.constuct(constructor, args, prototype) 메소드
+      // Reflect.constuct(constructor, args, prototype) 메소드 137p
 //      function constructor1(a, b) {
 //        this.a = a;
 //        this.b = b;
@@ -83,8 +83,8 @@
 //      
 //      console.log(obj.name);
 //      
-//      Reflect.deleteProperty(obj, "name");
-//      
+//      var delResult = Reflect.deleteProperty(obj, "name");
+////      console.log(delResult);  // 성공여부
 //      console.log(obj.name);  //undefined
       
       
@@ -104,6 +104,7 @@
 //      console.log(iterator.next().done);
       
       
+
       // Reflect.get(object. property, this) 메소드
 //      var obj = {
 //        __name__: "수지"
@@ -141,10 +142,15 @@
 //        __name__: "민호"
 //      };
 //      
+////      var obj3 = {
+////        __age__: 30
+////      };
+//
 //      Reflect.set(obj1, "name", "수지", obj2);
+////      Reflect.set(obj1, "name", "수지", obj3);
 //      
-//      console.log(obj1.name);
-//      console.log(obj2.__name__);
+//      console.log(obj1.name); // 수지
+//      console.log(obj2.__name__); // 수지
       
       
       // Reflect.getOwnPropertyDescriptor(object, property) 메소드
@@ -160,9 +166,9 @@
 //      console.log(descriptor.configurable);
       
       
-      // Reflect.getPropertyOf(object) 메소드
+      // Reflect.getPrototypeOf(object) 메소드
 //      var obj1 = {
-//        __proto__: {
+//        __proto__: {  // 프로토타입에 값 설정
 //          name: "수지"
 //        }
 //      };
@@ -175,14 +181,14 @@
       // Reflect.setPropertyOf(object, prototype) 메소드
 //      var obj = {};
 //      
-//      Reflect.setPrototypeOf(obj, {
+//      Reflect.setPrototypeOf(obj, { // obj 의 프로토타입의 프로퍼티에 값 설정
 //        name: "수지"
 //      });
 //      
 //      console.log(obj.name);
       
       
-      // Refelct.has(object, property) 메소드
+      // Reflect.has(object, property) 메소드
 //      var obj = {
 //        __proto__: {
 //          name: "수지"
@@ -213,11 +219,11 @@
 //        name: "수지"
 //      };
 //      
-//      console.log(Reflect.isExtensible(obj));
+//      console.log(Reflect.isExtensible(obj));       // 확장가능한지?
 //      
-//      console.log(Reflect.preventExtensions(obj));
+//      console.log(Reflect.preventExtensions(obj));  // 확장차단 성공여부 반환
 //      
-//      console.log(Reflect.isExtensible(obj));
+//      console.log(Reflect.isExtensible(obj));       // 확장가능한지?
       
       
       

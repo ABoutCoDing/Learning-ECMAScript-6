@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>조합 메소드명</title>
+  </head>
+  <body>
+    <h1>조합 메소드명</h1>
+
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+      // #1 - 185p
+//      class MyClass {
+//        static ["my" + "Method"](){
+//          console.log("안녕하세요");
+//        }
+//      }
+//
+//      MyClass["my" + "Method"]();
+
+      // #2 - 186p
+//      var s = Symbol("sample");
+//      class MyClass {
+//          static [s]() {
+//            console.log("안녕하세요");
+//          }
+//      }
+//
+//      MyClass[s]();
+    </script>
+  </body>
+</html>

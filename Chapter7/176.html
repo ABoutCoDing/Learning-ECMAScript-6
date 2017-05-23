@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>클래스 정의</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>클래스 정의</h1>
+
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+      // 클래스 선언
+      // #1 - 176p
+//      class Student {
+//        constructor(name) {
+//          this.name = name;
+//        }
+//      }
+//
+//      var s1 = new Student("수지");
+//      console.log(s1.name);
+
+
+      // #2 - 176p
+//      function Student(name) {
+//        this.name = name;
+//      }
+//      var s1 = new Student("수지");
+//      console.log(s1.name);
+
+      // #3 - 177p
+//      class Student {
+//        constructor(name) {
+//          this.name = name;
+//        }
+//      }
+//
+//      function School(name) {
+//        this.name = name;
+//      }
+//
+//      console.log(typeof Student);  // function
+//      console.log(typeof School == typeof Student);
+
+
+      // 클래스 표현식
+      // #1
+//      var Student = class {
+//        constructor(name){
+//          this.name = name;
+//        }
+//      }
+//
+//      var s1 = new Student("수지");
+//      console.log(s1.name);
+
+      // #2
+//      var Student= function(name){
+//        this.name = name;
+//      }
+//
+//      var s1 = new Student("수지");
+//      console.log(s1.name);
+
+    </script>
+  </body>
+</html>

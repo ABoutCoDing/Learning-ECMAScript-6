@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>프로퍼티 속성</title>
+  </head>
+  <body>
+    <h1>프로퍼티 속성</h1>
+
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+      // 클래스는 호이스팅 안 된다! - 186p
+//      myFunc();
+//      function myFunc(){}
+//
+//      var obj = new MyClass();
+//      class MyClass{}
+
+
+      // 생성자 메소드 결과를 오버라이딩 - 187p
+//      class MyClass {
+//        constructor() {
+//          return Object.create(null); // 리턴이 있으면 다른 인스턴스가 된다.
+//        }
+//      }
+//
+//      console.log(new MyClass() instanceof MyClass);  // false
+
+
+      // 정적 접근자 프로퍼티, Symbol.species
+      // #1 - 187p
+//      class MyCustomArray1 extends Array {
+//        static get [Symbol.species]() {
+//          return Array;
+//        }
+//      }
+//
+//      class MyCustomArray2 extends Array {}
+//
+//      var arr1 = new MyCustomArray1(0, 1, 2, 3, 4);
+//      var arr2 = new MyCustomArray2(0, 1, 2, 3, 4);
+//
+//      console.log(arr1 instanceof MyCustomArray1);  // true
+//      console.log(arr2 instanceof MyCustomArray2);  // true
+//
+//      arr1 = arr1.map(function(value) { return value + 1; });
+//      arr2 = arr2.map(function(value) { return value + 1; });
+//
+//      console.log(arr1 instanceof MyCustomArray1);  // false
+//      console.log(arr2 instanceof MyCustomArray2);  // false
+//
+//      console.log(arr1 instanceof Array); // true
+//      console.log(arr2 instanceof Array); // true
+
+
+      // #2 - 188p
+      // MyArray1 이 라이브러리의 일부라고 가정한다.
+//      class MyArray1 {
+//        // 기본 @@species. 자식 클래스는 이 프로퍼티를 상속한다.
+//        static get [Symbol.species](){
+//          // 기본 생성자
+//          return this;
+//        }
+//
+//        mapping() {
+//          return new this.constructor[Symbol.species]();
+//        }
+//      }
+//
+//      class MyArray2 extends MyArray1 {
+//        static get [Symbol.species]() {
+//          return MyArray1;
+//        }
+//      }
+//
+//      var arr = new MyArray2();
+//
+//      console.log(arr instanceof MyArray2);
+//
+//      arr = arr.mapping();  // 생성자를 MyArray1 으로 지정
+//
+//      console.log(arr instanceof MyArray2);
+
+
+
+      // 객체 리터럴에 super 사용
+//      var obj1 = {
+//        print() {
+//          console.log("안녕하세요");
+//        }
+//      }
+//
+//      var obj2 = {
+//        print() {
+//          super.print();
+//        }
+//      }
+//
+//      Object.setPrototypeOf(obj2, obj1);
+//      obj2.print();
+    </script>
+
+    <script>
+      // 암시적 파라미터, new.target - 190p
+//      function MyConstructor(){
+//        console.log(new.target.name); // target이 지정된..
+//      }
+//
+//      class MyClass extends MyConstructor {
+//        constructor() {
+//          super();
+//        }
+//      }
+//
+//      var obj1 = new MyClass();
+//      var obj2 = new MyConstructor();
+    </script>
+  </body>
+</html>

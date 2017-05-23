@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>즉시 실행 함수 표현식 (IIFE)</title>
+  </head>
+  <body>
+    <h1>즉시 실행 함수 표현식 (IIFE)</h1>
+
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+      // 즉시 실행 함수 표현식 (IIFE)
+
+      (function(window) {
+        var sum = function(x, y) {
+          return x + y;
+        }
+
+        var sub = function(x, y) {
+          return x - y;
+        }
+
+        var math = {
+          findSum: function(a, b) {
+            return sum(a, b);
+          },
+          findSub: function(a, b) {
+            return sub(a, b);
+          }
+        }
+
+        window.math = math;
+      })(window)
+
+      console.log(math.findSum(1, 2));
+      console.log(math.findSub(1, 2));
+
+    </script>
+  </body>
+</html>

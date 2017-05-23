@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>프로토타입 메소드</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>프로토타입 메소드</h1>
+
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+      // #1 - 178p
+//      class Person {
+//        constructor(name, age) {
+//          this.name = name;
+//          this.age = age;
+//        }
+//
+//        printProfile(){
+//          console.log("이름: " + this.name + ", 나이: " + this.age);
+//        }
+//      }
+//
+//      var p = new Person("수지", 12);
+//      p.printProfile();
+//
+//      console.log("printProfile" in p.__proto__);
+//      console.log("printProfile" in Person.prototype);
+
+
+      // #2 - 179p
+//      function Person(name, age) {
+//        this.name = name;
+//        this.age = age;
+//      }
+//
+//      Person.prototype.printProfile = function() {
+//        console.log("이름 : " + this.name + ", 나이: " + this.age);
+//      }
+//
+//      var p = new Person("수지", 12);
+//      p.printProfile();
+//
+//      console.log("printProfile" in p.__proto__);
+//      console.log("printProfile" in Person.prototype);
+
+
+      // get/set 메소드 - 179p
+//      class Person {
+//        constructor(name) {
+//          this._name_ = name;
+//        }
+//
+//        get name() {
+//          return this._name_;
+//        }
+//
+//        set name(name) {
+//          this._name_ = name;
+//        }
+//      }
+//
+//      var p = new Person("수지");
+//      console.log(p.name);
+//      p.name = "민호";
+//      console.log(p.name);
+//
+//      console.log("name" in p.__proto__);
+//      console.log("name" in Person.prototype);
+//      console.log(Object.getOwnPropertyDescriptor(p.__proto__, "name").set);
+//      console.log(Object.getOwnPropertyDescriptor(Person.prototype, "name").get);
+//      console.log(Object.getOwnPropertyDescriptor(p, "_name_").value);  // 민호
+
+
+
+      // 제너레이터 메소드 - 181p
+//      class myClass {
+//        * generator_function() {
+//          yield 1;
+//          yield 2;
+//          yield 3;
+//          yield 4;
+//          yield 5;
+//        }
+//      }
+//
+//      var obj = new myClass();
+//
+//      let generator = obj.generator_function();
+//
+//      console.log(generator.next().value);
+//      console.log(generator.next().value);
+//      console.log(generator.next().value);
+//      console.log(generator.next().value);
+//      console.log(generator.next().value);
+//      console.log(generator.next().done);
+//
+//      console.log("generator_function" in myClass.prototype);
+    </script>
+  </body>
+</html>

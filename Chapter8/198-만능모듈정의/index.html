@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>만능 모듈 정의</title>
+  </head>
+  <body>
+    <h1>만능 모듈 정의</h1>
+
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.3/require.js"></script>
+
+    <script type="module">
+      // 만능 모듈 정의
+      require(["math"], function(math) {
+        console.log(math.findSum(1, 2));
+        console.log(math.findSub(1, 2));
+      })
+    </script>
+  </body>
+</html>

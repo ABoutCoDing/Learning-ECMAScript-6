@@ -2,10 +2,10 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8">
-    <title>프록시란?</title>
+    <title>프록시</title>
   </head>
   <body>
-    <h1>프록시란?</h1>
+    <h1>프록시</h1>
     
     <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
     <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
@@ -37,8 +37,8 @@
       
       
       // 트랩
-      // get(target,property, receiver) 메소드
-      // #1
+      // get(target, property, receiver) 메소드
+      // #1 - 152p
 //      var proxy = new Proxy({
 //        age: 12
 //      }, {
@@ -52,11 +52,11 @@
 //        }
 //      );
 //      
-//      console.log(Reflect.get(proxy, "age"));
-//      console.log(Reflect.get(proxy, "name"));
+//      console.log(Reflect.get(proxy, "age"));   // 객체에서 age 프로퍼티를찾는다.
+//      console.log(Reflect.get(proxy, "name"));  // 객체에서 name 프로퍼티를찾는다.
       
       
-      // #2 - 무한루프
+      // #2 - 153p
 //      var proxy = new Proxy({age: 13}, {
 //        get: function(target, property, receiver) {
 //          
@@ -78,10 +78,12 @@
 //        __proto__: proxy
 //      }
 //      
-//      temp = obj.name;
+////      temp = obj.name;  // 오류 무한루프
+//      temp = Reflect.get(proxy, "name");
+
+
       
-      // 규칙 #1
-      // set(target, property, value, receiver) 메소드
+      // set(target, property, value, receiver) 메소드 - 154p
 //      var proxy = new Proxy({}, {
 //        set: function(target, property, value, receiver) {
 //          target[property] = value;
@@ -92,8 +94,9 @@
 //      Reflect.set(proxy, "name", "수지");
 //      console.log(proxy.name);
 
-      // 규칙 #2
-      // has(target, property) 메소드
+
+
+      // has(target, property) 메소드  - 155p
 //      var proxy = new Proxy({age: 12}, {
 //        has: function(target, property) {
 //          if (property in target) {
@@ -107,8 +110,9 @@
 //      console.log(Reflect.has(proxy, "name"));
 //      console.log(Reflect.has(proxy, "age"));
 
-      // 규칙 #3
-      // isExtensible(target) 메소드
+
+
+      // isExtensible(target) 메소드 - 156p
 //      var proxy = new Proxy({age: 12}, {
 //        isExtensible: function(target){
 //          return Object.isExtensible(target);
@@ -118,8 +122,8 @@
 //      console.log(Reflect.isExtensible(proxy));
 
 
-      // 규칙 #4
-      // setPrototypeOf(target, prototype) 메소트
+
+      // setPrototypeOf(target, prototype) 메소드 - 157p
 //      var proxy = new Proxy({}, {
 //        setPrototypeOf: function(target, value) {
 //          Reflect.setPrototypeOf(target, value);
@@ -132,8 +136,8 @@
 //      console.log(Reflect.getPrototypeOf(proxy).name);
 
 
-      // 규칙 #5
-      // preventExtensions(target) 메소드
+
+      // preventExtensions(target) 메소드 - 157p
 //      var proxy = new Proxy({}, {
 //        preventExtensions: function(target){
 //          Object.preventExtensions(target);
@@ -144,11 +148,11 @@
 //      Reflect.preventExtensions(proxy);
 //
 ////      proxy.a = 12;
-////      console.log(proxy.a);
+////      console.log(proxy.a); // TypeError: Cannot define property a, object is not extensible
 
 
-      // 규칙 #6
-      // getOwnPropertyDescriptor(target, property) 메소드
+
+      // getOwnPropertyDescriptor(target, property) 메소드 - 158p
 //      var proxy = new Proxy({age: 12}, {
 //        getOwnPropertyDescriptor: function(target, property){
 //          return Object.getOwnPropertyDescriptor(target, property);
@@ -163,7 +167,8 @@
 //      console.log("Value: " + descriptor.value);
 
 
-      // defineProperty(target, property, descriptor) 메소드
+
+      // defineProperty(target, property, descriptor) 메소드  - 159p
 //      var proxy = new Proxy({}, {
 //        defineProperty: function(target, property, descriptor) {
 //          Object.defineProperty(target, property, descriptor);
@@ -176,8 +181,8 @@
 //      console.log(proxy.name);
 
 
-      // 규칙 #8
-      // The deleteProperty(target, property) 메소드
+
+      // The deleteProperty(target, property) 메소드  - 160p
 //      var proxy = new Proxy({age: 12}, {
 //        deleteProperty: function(target, property){
 //          return delete target[property];
@@ -188,8 +193,8 @@
 //      console.log(proxy.age);
 
 
-      // 규칙 #9
-      // enumerate(target) 메소드
+
+      // enumerate(target) 메소드 - 160p
       // https://bugs.chromium.org/p/v8/issues/detail?id=4768
 //      var proxy = new Proxy({age: 12, name: "수지"}, {
 //        enumerate: function(target) {
@@ -209,8 +214,8 @@
 //      console.log(iterator.next().done);
 
 
-      // 규칙 #10
-      // ownKeys(target) 메소드
+
+      // ownKeys(target) 메소드 - 161p
 //      var s = Symbol();
 //
 //      var object = {age: 12, __proto__: {name: "수지"}, [s]: "Symbol"};
@@ -234,8 +239,8 @@
 //      console.log(Object.getOwnPropertySymbols(proxy));
 
 
-      // 규칙 #11
-      // apply(target, thisValue, arguments) 메소드
+
+      // apply(target, thisValue, arguments) 메소드 - 163p
 //      var proxy = new Proxy(function(){}, {
 //        apply: function(target, thisValue, args) {
 //          console.log(thisValue.name);
@@ -253,7 +258,8 @@
 //      console.log(sum);
 
 
-      // construct(target, arguments) 메소드
+
+      // construct(target, arguments) 메소드 - 164p
 //      var proxy = new Proxy(function() {}, {
 //        construct: function(target, args) {
 //          return {name: args[0]};
@@ -264,24 +270,25 @@
 //      console.log(obj.name);
 
 
-      // Proxy.revocable(target, handler) 메소드
-      var revocableProxy = Proxy.revocable({
-        age: 12
-      }, {
-        get: function(target, property, receiver) {
-          if (property in target) {
-            return target[property];
-          } else {
-            return "찾지 못함";
-          }
-        }
-      });
 
-      console.log(revocableProxy.proxy.age);
-
-      revocableProxy.revoke();
-
-      console.log(revocableProxy.proxy.name); // TypeError: Cannot perform 'get' on a proxy that has been revoked
+      // Proxy.revocable(target, handler) 메소드 - 164p
+//      var revocableProxy = Proxy.revocable({
+//        age: 12
+//      }, {
+//        get: function(target, property, receiver) {
+//          if (property in target) {
+//            return target[property];
+//          } else {
+//            return "찾지 못함";
+//          }
+//        }
+//      });
+//
+//      console.log(revocableProxy.proxy.age);
+//
+//      revocableProxy.revoke();
+//
+//      console.log(revocableProxy.proxy.name); // TypeError: Cannot perform 'get' on a proxy that has been revoked
       
     </script>
   </body>

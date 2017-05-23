@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>객체 지향 자바스크립트</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>객체 지향 자바스크립트</h1>
+
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+      // 객체 생성
+      // #1 - 168p
+//      var student = {
+//        name: "수지",
+//        printName: function() {
+//          console.log(this.name);
+//        }
+//      }
+//
+//      student.printName();
+
+      // #2 - 169p
+//      function Student(name) {
+//        this.name = name;
+//      }
+//
+//      Student.prototype.printName = function() {
+//        console.log(this.name);
+//      }
+//
+//      var student1 = new Student("수지");
+//      var student2 = new Student("민호");
+//
+//      student1.printName();
+//      student2.printName();
+
+
+      // 상속
+      // #1 - 170p
+//      var object1 = {
+//        name: "수지",
+//        __proto__: {age: 24}
+//      }
+//
+//      var object2 = {name: "수지"};
+//      Object.setPrototypeOf(object2, {age: 24});
+//
+//      var object3 = Object.create({age:24}, {name: {value: "수지"}});
+//
+//      console.log(object1.name + " " + object1.age);
+//      console.log(object2.name + " " + object2.age);
+//      console.log(object3.name + " " + object3.age);
+
+
+      // #2 - 171p
+//      var obj = {
+//        name: "수지"
+//      }
+//
+//      console.log(obj.__proto__ == Object.prototype);
+
+
+      // #3 - 171p
+//      function Student() {
+//        this.name = "수지";
+//      }
+//
+//      var obj = new Student();
+//
+//      console.log(obj.__proto__.constructor == Student);
+//      console.log(obj.__proto__ == Student.prototype);
+
+
+      // #4 - 172p
+//      function Student(name) {
+//        this.name = name;
+//      }
+//
+//      Student.prototype.printName = function() {
+//        console.log(this.name);
+//      }
+//
+//      var s1 = new Student("수지");
+//      var s2 = new Student("민호");
+//
+//      function School(name) {
+//        this.name = name;
+//        this.printName = function() {
+//          console.log(this.name);
+//        }
+//      }
+//
+//      var s3 = new School("이학교");
+//      var s4 = new School("저학교");
+//
+//      console.log(s1.printName == s2.printName);
+//      console.log(s3.printName == s4.printName);
+
+
+      // #5 - 173p
+//      function School(schoolName){
+//        this.schoolName = schoolName;
+//      }
+//
+//      School.prototype.printSchoolName = function() {
+//        console.log(this.schoolName);
+//      }
+//
+//      function Student(studentName, schoolName) {
+//        this.studentName = studentName;
+//        School.call(this, schoolName);
+//      }
+//      Student.prototype = new School(); // 상속
+//      Student.prototype.printStudentName = function() {
+//        console.log(this.studentName);
+//      }
+//
+//      var s = new Student("수지", "이학교");
+//      s.printStudentName();
+//      s.printSchoolName();
+
+
+      // 원시 데이터 타입 생성자
+      // #1
+//      var s1 = "문자열";
+//      var s2 = new String("문자열");
+//
+//      console.log(typeof s1);
+//      console.log(typeof s2);
+//
+//      console.log(s1 == s2);
+//      console.log(s1.length); // 3
+
+      // #2
+//      var s1 = "문자열";
+//      var s2 = new String("문자열");
+//
+//      console.log(s1 == s2.valueOf());
+//      console.log((new String(s1)).length);
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>클래스의 상속 구현</title>
+  </head>
+  <body>
+    <h1>클래스의 상속 구현</h1>
+
+    <!-- https://github.com/google/traceur-compiler/wiki/Getting-Started -->
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">
+      function A(a) {
+        this.a = a;
+      }
+
+      A.prototype.printA = function() {
+        console.log(this.a);
+      }
+
+      class B extends A {
+        constructor(a, b) {
+          super(a);
+          this.b = b;
+        }
+
+        printB() {
+          console.log(this.b);
+        }
+
+        static sayHello() {
+          console.log("안녕하세요");
+        }
+      }
+
+      class C extends B {
+        constructor(a, b, c){
+          super(a, b);
+          this.c = c;
+        }
+
+        printC() {
+          console.log(this.c);
+        }
+
+        printAll() {
+          this.printC();
+          super.printB();
+          super.printA();
+        }
+      }
+
+      var obj = new C(1, 2, 3);
+      obj.printAll();
+
+      C.sayHello();
+    </script>
+  </body>
+</html>
