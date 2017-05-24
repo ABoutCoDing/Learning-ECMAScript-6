@@ -11,6 +11,7 @@
 	console.log(number);  // 22
 
 
+
 	// 타입화 배열 (typed array)
 	var buffer = new ArrayBuffer(80); // 80바이트 640비트
 	var typed_array = new Float64Array(buffer);
