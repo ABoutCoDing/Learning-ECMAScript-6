@@ -21,6 +21,7 @@
 	console.log(typed_array[4]);      // 11
 
 
+
 	// 세트 (set)
 	let set = new Set("안녕하세요!!!");  // 뒤쪽 !! 는 삭제
 	set.add(12);
