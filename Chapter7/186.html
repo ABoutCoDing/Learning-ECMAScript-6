@@ -34,7 +34,7 @@
       // 정적 접근자 프로퍼티, Symbol.species
       // #1 - 187p
 //      class MyCustomArray1 extends Array {
-//        static get [Symbol.species]() {
+//        static get [Symbol.species]() { // 컨스트럭터 반환
 //          return Array;
 //        }
 //      }
@@ -67,6 +67,8 @@
 //        }
 //
 //        mapping() {
+////          console.log(this.constructor);  // MyArray2
+////          console.log(this.constructor[Symbol.species]);  // MyArray1
 //          return new this.constructor[Symbol.species]();
 //        }
 //      }
