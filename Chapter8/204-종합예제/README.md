@@ -1,6 +1,6 @@
 1. babel 설치
 
-$npm install --save-dev babel-preset-es2015
+$npm install
 
 
 

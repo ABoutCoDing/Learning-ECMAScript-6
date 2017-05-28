@@ -33,28 +33,7 @@
 
       // 정적 접근자 프로퍼티, Symbol.species
       // #1 - 187p
-//      class MyCustomArray1 extends Array {
-//        static get [Symbol.species]() { // 컨스트럭터 반환
-//          return Array;
-//        }
-//      }
-//
-//      class MyCustomArray2 extends Array {}
-//
-//      var arr1 = new MyCustomArray1(0, 1, 2, 3, 4);
-//      var arr2 = new MyCustomArray2(0, 1, 2, 3, 4);
-//
-//      console.log(arr1 instanceof MyCustomArray1);  // true
-//      console.log(arr2 instanceof MyCustomArray2);  // true
-//
-//      arr1 = arr1.map(function(value) { return value + 1; });
-//      arr2 = arr2.map(function(value) { return value + 1; });
-//
-//      console.log(arr1 instanceof MyCustomArray1);  // false
-//      console.log(arr2 instanceof MyCustomArray2);  // false
-//
-//      console.log(arr1 instanceof Array); // true
-//      console.log(arr2 instanceof Array); // true
+      // 트레이서 결과 이상 - 최하단 소스 확인
 
 
       // #2 - 188p
@@ -107,6 +86,33 @@
     </script>
 
     <script>
+      // 정적 접근자 프로퍼티, Symbol.species
+      // #1 - 187p
+      // 트레이서
+//      class MyCustomArray1 extends Array {
+//        static get [Symbol.species]() { // 컨스트럭터 반환
+//          return Array;
+//        }
+//      }
+//
+//      class MyCustomArray2 extends Array {}
+//
+//      var arr1 = new MyCustomArray1(0, 1, 2, 3, 4);
+//      var arr2 = new MyCustomArray2(0, 1, 2, 3, 4);
+//
+//      console.log(arr1 instanceof MyCustomArray1);
+//      console.log(arr2 instanceof MyCustomArray2);
+//
+//      arr1 = arr1.map(function(value) { return value + 1; });
+//      arr2 = arr2.map(function(value) { return value + 1; });
+//
+//      console.log(arr1 instanceof MyCustomArray1);
+//      console.log(arr2 instanceof MyCustomArray2);
+//
+//      console.log(arr1 instanceof Array);
+//      console.log(arr2 instanceof Array);
+
+
       // 암시적 파라미터, new.target - 190p
 //      function MyConstructor(){
 //        console.log(new.target.name); // target이 지정된..

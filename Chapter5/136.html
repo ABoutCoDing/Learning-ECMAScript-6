@@ -118,7 +118,7 @@
 //      
 //      console.log(obj.name);  // 수지
 //      
-//      var name = Reflect.get(obj, "name", {__name__: "민호"});
+//      var name = Reflect.get(obj, "name", {__name__: "민호"});  // 마지막이 this에 바인딩
 //      
 //      console.log(name);  // 민호
       
@@ -178,7 +178,7 @@
 //      console.log(obj2.name);
       
       
-      // Reflect.setPropertyOf(object, prototype) 메소드
+      // Reflect.setPrototypeOf(object, prototype) 메소드
 //      var obj = {};
 //      
 //      Reflect.setPrototypeOf(obj, { // obj 의 프로토타입의 프로퍼티에 값 설정

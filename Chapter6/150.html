@@ -43,6 +43,7 @@
 //        age: 12
 //      }, {
 //          get: function(target, property, receiver) {
+////            console.log(receiver);
 //            if (property in target) {
 //              return target[property];
 //            } else {
@@ -147,8 +148,8 @@
 //
 //      Reflect.preventExtensions(proxy);
 //
-////      proxy.a = 12;
-////      console.log(proxy.a); // TypeError: Cannot define property a, object is not extensible
+////      proxy.a = 12; // TypeError: Cannot define property a, object is not extensible
+////      console.log(proxy.a);
 
 
 
